@@ -1,0 +1,15 @@
+{
+  "client" : {
+    "prefix" : "s!"
+  },
+  "token" : "",
+  "creator": {
+    "Jimmy": ["226003765889597440", "168794245178720256", "225216075439013888"]
+  }, 
+  "emojis": {
+    "success": "✅",
+    "warn": "⚠",
+    "working": "⚙"
+  },
+  "setgame": "'s!help' for commands"
+}
