@@ -2,6 +2,7 @@
 const moment = require('moment');
 const randomcolor = require('randomcolor');
 const Discord = require("discord.js");
+const fs = require('fs');
 
 //bot client
 const bot = new Discord.Client();
