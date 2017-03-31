@@ -16,8 +16,7 @@ fs.readdir(`./cmd/`, (err, files) => {
   console.log(`Loading a total of ${files.length} commands.`);
   files.map(f=> {
     let props = require(`./cmd/${f}`);
-    console.log(`Loading Command: ${props.help.name}. :ok_hand:`);
-    commands.set(props.help.name, props);
+    commands.set(props);
   });
 });
 

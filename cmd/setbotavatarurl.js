@@ -1,4 +1,4 @@
-module.exports = function (bot, message, args, config) {
+module.exports = function (bot, message, params, config) {
   if (!config.creator.Jimmy.includes(message.author.id)) {
 			return message.reply("pleb ur not the bot creator").catch(console.error);
 		}

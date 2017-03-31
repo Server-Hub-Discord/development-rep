@@ -1,6 +1,6 @@
 module.exports = function (bot, message, args, config) {
 if (message.content.startsWith('[]' + 'eval')) {
-    if !(config.creator.Jimmy.includes(message.author.id)) return;
+    if (!config.creator.Jimmy.includes(message.author.id)) return;
     try {
       var code = args.join(" ");
       var evaled = eval(code);
