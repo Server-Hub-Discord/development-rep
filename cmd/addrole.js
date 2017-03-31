@@ -1,4 +1,4 @@
-const config = require('.../config.json');
+const config = require('../../config.json');
 
 module.exports = function (bot, maessage, args) {
 	let modRole = message.guild.roles.find("name", "Staff");
