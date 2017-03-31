@@ -1,6 +1,4 @@
-const config = require('../../config.json');
-
-module.exports = function (bot, message, args) {
+module.exports = function (bot, message, args, config) {
   if (!config.creator.Jimmy.includes(message.author.id)) {
 			return message.reply("pleb ur not the bot creator").catch(console.error);
 		}

@@ -1,6 +1,4 @@
-const config = require('../../config.json');
-
-module.exports = function (bot, message, args) {
+module.exports = function (bot, message, args, config) {
 if (message.content.startsWith('[]' + 'eval')) {
     if !(config.creator.Jimmy.includes(message.author.id)) return;
     try {

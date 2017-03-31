@@ -1,6 +1,4 @@
-const config = require('.../config.json');
-
-module.exports = function (bot, messsage, params) {
+module.exports = function (bot, messsage, params, config) {
       message.channel.sendMessage("check your dms :rocket:").catch(console.error);
       let modRole = message.guild.roles.find("name", "Staff");
       let adminRole = message.guild.roles.find("name", "Owner");

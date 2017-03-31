@@ -1,4 +1,4 @@
-module.exports = function (bot, message, args) {
+module.exports = function (bot, message, args, config) {
         let guild = message.guild;
         function online(m) {
           return m.presence.status === "online"

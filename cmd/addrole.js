@@ -1,6 +1,4 @@
-const config = require('../../config.json');
-
-module.exports = function (bot, maessage, args) {
+module.exports = function (bot, maessage, params, config) {
 	let modRole = message.guild.roles.find("name", "Staff");
 	if(!(message.member.roles.has(modRole.id) || config.creator.Jimmy.includes(message.author.id))) {
 		return message.reply("pleb ur not admin").catch(console.error);
