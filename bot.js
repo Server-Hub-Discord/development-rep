@@ -39,6 +39,6 @@ bot.on('message', msg => {
   var params = msg.content.split(" ").slice(1);
   if(commands.has(command)) {
     var cmd = commands.get(command);
-    cmd.run(bot, msg, params);
+    cmd(bot, msg, params);
   }
 });
