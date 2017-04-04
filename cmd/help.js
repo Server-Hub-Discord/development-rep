@@ -1,4 +1,5 @@
-module.exports = function (bot, messsage, params, config) {
+exports.run = (bot, msg, params, config) => {
+    if (!params[0]) {
       message.channel.sendMessage("check your dms :rocket:").catch(console.error);
       let modRole = message.guild.roles.find("name", "Staff");
       let adminRole = message.guild.roles.find("name", "Owner");
@@ -16,4 +17,24 @@ module.exports = function (bot, messsage, params, config) {
           title: "Command List",
           description: cmds,
     }}).catch(console.error);
+  } else {
+    let command = params[0];
+    if(bot.commands.has(command)) {
+      command = bot.commands.get(command);
+      msg.channel.sendCode("asciidoc", `= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`);
+    }
+  }
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
+};
+
+exports.help = {
+  name : "help",
+  description: "Returns page details from root's awesome bot guide.",
+  usage: "help [command]"
 };
