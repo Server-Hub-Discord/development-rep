@@ -1,4 +1,4 @@
-exports.run = (bot, msg, params, config) => {
+exports.run = (bot, message, params, config) => {
     if (!params[0]) {
       message.channel.sendMessage("check your dms :rocket:").catch(console.error);
       let modRole = message.guild.roles.find("name", "Staff");
@@ -21,7 +21,7 @@ exports.run = (bot, msg, params, config) => {
     let command = params[0];
     if(bot.commands.has(command)) {
       command = bot.commands.get(command);
-      msg.channel.sendCode("asciidoc", `= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`);
+      message.channel.sendCode("asciidoc", `= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`);
     }
   }
 };
