@@ -1,4 +1,4 @@
-exports.run = (bot, message, params, config) => {
+exports.run = (bot, message, params, perms, config) => {
     if (!params[0]) {
       message.channel.sendMessage("check your dms :rocket:").catch(console.error);
       let modRole = message.guild.roles.find("name", "Staff");
