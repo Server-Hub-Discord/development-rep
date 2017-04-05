@@ -1,8 +1,4 @@
-module.exports = function (bot, maessage, params, config) {
-	let modRole = message.guild.roles.find("name", "Staff");
-	if(!(message.member.roles.has(modRole.id) || config.creator.Jimmy.includes(message.author.id))) {
-		return message.reply("pleb ur not admin").catch(console.error);
-	}
+exports.run = (bot, maessage, params)  => {
 	let args = message.content.split(' ');
 	args.shift();
 	args.shift();
@@ -13,4 +9,17 @@ module.exports = function (bot, maessage, params, config) {
 	// Add the role!
 	member.addRole(role.id).catch(console.error);
 	message.channel.sendMessage("role " + args.join(" ") + " has been added  👍");
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['ar'],
+  permLevel: 2
+};
+
+exports.help = {
+  name : "addrole",
+  description: "adds role to a user",
+  usage: "addrole {user} [role]"
 };
