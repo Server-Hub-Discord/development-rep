@@ -32,7 +32,7 @@ bot.on("message", msg => {
   }
   if (cmd) {
     if (perms < cmd.conf.permLevel) return;
-    cmd.run(bot, msg, params, perms, config);
+    cmd.run(bot, msg, params, perms);
   }
 });
 
@@ -70,10 +70,10 @@ bot.elevation = function(msg) {
   /* This function should resolve to an ELEVATION level which
      is then sent to the command handler for verification*/
   let permlvl = 0;
-  let mod_role = msg.guild.roles.find("name", "Mods");
-  if(mod_role && msg.member.roles.has(mod_role.id)) permlvl = 2;
-  let admin_role = msg.guild.roles.find("name", "Devs");
-  if(admin_role && msg.member.roles.has(admin_role.id)) permlvl = 3;
-  if(msg.author.id === config.ownerid) permlvl = 4;
+  let mod_role = msg.guild.roles.find("name", "Staff");
+  if((mod_role && msg.member.roles.has(mod_role.id)) || config.creator.Jimmy.includes(msg.author.id)) permlvl = 2;
+  let admin_role = msg.guild.roles.find("name", "Owner");
+  if((admin_role && msg.member.roles.has(admin_role.id)) || config.creator.Jimmy.includes(msg.author.id)) permlvl = 3;
+  if(config.creator.Jimmy.includes(msg.author.id)) permlvl = 4;
   return permlvl;
 };
