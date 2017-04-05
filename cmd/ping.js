@@ -1,3 +1,5 @@
-module.exports = function (bot, message, params, config) {
-		message.channel.sendMessage("Yes, yes I'm on").catch(console.error);
+exports.run = (bot, message) => {
+	message.channel.sendMessage("Ping...")
+        .then(msg => msg.edit(`Pong! \`${msg.createdTimestamp - message.createdTimestamp}ms\``))
+        .catch(console.error);
 };
