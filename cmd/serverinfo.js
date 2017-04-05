@@ -1,4 +1,4 @@
-module.exports = function (bot, message, args, config) {
+exports.run = (bot, message) => {
         let guild = message.guild;
         function online(m) {
           return m.presence.status === "online"
@@ -40,3 +40,17 @@ module.exports = function (bot, message, args, config) {
 
         }}).catch(console.error);
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['sinfo'],
+  permLevel: 0
+};
+
+exports.help = {
+  name : "serverinfo",
+  description: "Returns server information",
+  usage: "serverinfo"
+};
+
