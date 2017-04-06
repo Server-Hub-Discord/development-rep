@@ -26,8 +26,12 @@ exports.run = (bot, message, params) => {
   } else {
     let command = params[0];
     if(bot.commands.has(command)) {
-      command = bot.commands.get(command);
-      message.channel.sendCode("asciidoc", `= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`);
+      command = bot.commands.get(command); 
+         message.author.sendMessage(" ", {
+          embed: {
+              color: 0x00b7c6,
+          title: `= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`);
+    }}).catch(console.error);
     }
   }
 };
