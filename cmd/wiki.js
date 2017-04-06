@@ -1,7 +1,7 @@
 exports.run = (bot, message) => {
-    let noto = 'https://github.com/Server-Hub-Discord/Staff-Mod-Bot/wiki';
+    let noto = 'https://github.com/Server-Hub-Discord/Staff-Mod-Bot/wiki/Progress';
 		message.channel.sendMessage("", {embed: {
-		description: noto
+		title: noto
 	}}).catch(console.error);
 };
 
