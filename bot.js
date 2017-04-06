@@ -6,12 +6,12 @@ const moment = require("moment");
 
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
-fs.readdir("./cmd/", (err, files) => {
-  if (err) console.error(err);
-  log(`Loading a total of ${files.length} commands.`);
+fs.readdir(`./cmd/`, (err, files) => {
+  if(err) console.error(err);
+  console.log(`Loading a total of ${files.length} commands.`);
   files.forEach(f => {
     let props = require(`./cmd/${f}`);
-    log(`Loading Command: ${props.help.name}. :ok_hand:`);
+    console.log(`Loading Command: ${props.help.name}. :ok_hand:`);
     bot.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
       bot.aliases.set(alias, props.help.name);
@@ -36,14 +36,22 @@ bot.on("message", msg => {
   }
 });
 
-bot.on("ready", () => {
-  log(`GuideBot: Ready to serve ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} servers.`);
+bot.on('ready',() => {
+	console.log(`---------------------------------------------`)
+	console.log(`Connected! ${config.emojis.success}`);
+	console.log(`Logged in as ${bot.user.username}`);
+	console.log(`token = ${config.token}`);
+	console.log(`game = ${config.setgame}`);
+	console.log(`prefix = ${config.prefix}`);
+	console.log(`console emojis = ${config.emojis}`)
+	console.log(`---------------------------------------------`)
+	bot.user.setGame(config.setgame);
 });
 
 bot.on("error", console.error);
 bot.on("warn", console.warn);
 
-bot.login(config.botToken);
+bot.login(config.token);
 
 bot.reload = function(command) {
   return new Promise((resolve, reject) => {
