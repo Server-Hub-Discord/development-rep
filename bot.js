@@ -43,7 +43,7 @@ bot.on('ready',() => {
 	console.log(`token = ${config.token}`);
 	console.log(`game = ${config.setgame}`);
 	console.log(`prefix = ${config.prefix}`);
-	console.log(`console emojis = ${config.emojis}`)
+	console.log(`console emojis = ${config.emojis.warn} ${config.emojis.success} ${config.emojis.working}`)
 	console.log(`---------------------------------------------`)
 	bot.user.setGame(config.setgame);
 });

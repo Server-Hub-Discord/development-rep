@@ -1,5 +1,5 @@
 exports.run = (bot, message) => {
-    let noto = 'Main Repository https://github.com/Server-Hub-Discord/Staff-Mod-Bot \n  Dev repository (the bot is running on dev right now https://github.com/Server-Hub-Discord/development-rep/) ';
+    let noto = 'Main Repository https://github.com/Server-Hub-Discord/Staff-Mod-Bot \n\n  Dev repository (the bot is running on dev right now https://github.com/Server-Hub-Discord/development-rep/) ';
 		message.channel.sendMessage("", {embed: {
 		title: noto
 	}}).catch(console.error);
