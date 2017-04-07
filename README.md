@@ -6,7 +6,7 @@ Staff-Mod-Bot is a bot written in javascript using [discord.js](https://github.c
 
 ### How do I set it up?
 
-If you're the bot hoster for server hub then look [here](https://github.com/Server-Hub-Discord/development-rep/releases/tag/v1.0). Download the setup file corresponding to your [OS](https://en.wikipedia.org/wiki/Operating_system) run it and then open setup-dependencies.bat and then to update code when Jimmy tells you to update then do it all again
+If you're the bot hoster for server hub then look [here](https://github.com/Server-Hub-Discord/development-rep/releases/tag/v1.0). Download the setup file corresponding to your [OS](https://en.wikipedia.org/wiki/Operating_system#Examples_of_operating_systems) run it and then open setup-dependencies.bat and then to update code when Jimmy tells you to update then do it all again
 
 ### Commands
 
