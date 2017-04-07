@@ -18,5 +18,5 @@ exports.conf = {
 exports.help = {
   name : "submit",
   description: "makes the bot send a message in the channel specified",
-  usage: "submit"
+  usage: "submit [the submitted form]"
 };
