@@ -30,10 +30,10 @@ exports.run = (bot, message, params) => {
     let command = params[0];
     if(bot.commands.has(command)) {
       command = bot.commands.get(command);
-         message.author.sendMessage(" ", {
+         message.channel.sendMessage(" ", {
           embed: {
               color: 0x00b7c6,
-          title: `= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`
+          title: `${command.help.name} = \n ${command.help.description}. \n \n usage: ${command.help.usage}`
     }}).catch(console.error);
     }
   }

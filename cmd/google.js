@@ -1,7 +1,7 @@
 const google = require('google');
 
 google.resultsPerPage = 3;
-var nextCounter = 0;
+
 
 
 
@@ -9,18 +9,26 @@ exports.run = (bot, message, params) => {
   google(params, function (err, res){
   if (err) console.error(err);
 
-  for (var i = 0; i < res.links.length; ++i) {
-    var link = res.links[i];
-    message.channel.sendMessage(link.title + ' - ' + link.href);
-    message.channel.sendMessage(link.description + "\n");
+    message.channel.sendMessage(" ", {embed: {
+      title: `Search: ${params}`,
+      fields: [
+    {
+      name: `Result:`,
+      value: `[${res.links[0].title}](${res.links[0].href}) \n ${res.links[0].description}`
+    }
+  ]
+    }});
+    if (res.links[2]) {
+    message.channel.sendMessage(`See also \n ${res.links[1].href} \n ${res.links[2].href}`);
   }
-
-  if (nextCounter < 4) {
-    nextCounter += 1;
-    if (res.next) res.next();
+  else if (res.links[1]) {
+    message.channel.sendMessage(`See also \n ${res.links[1].href}`);
   }
-});
-};
+  else if (res.links[0]) {
+    return;
+  }
+  }
+)};
 
 exports.conf = {
   enabled: true,

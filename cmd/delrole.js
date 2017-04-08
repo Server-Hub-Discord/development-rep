@@ -1,4 +1,4 @@
-exports.run = (bot, maessage, params)  => {
+exports.run = (bot, message, params)  => {
 	let args = message.content.split(' ');
 	args.shift();
 	args.shift();
@@ -7,6 +7,10 @@ exports.run = (bot, maessage, params)  => {
 	let member = message.guild.member(message.mentions.users.first());
 	// or the person who made the command: let member = msg.member;
 	// remove the role!
+	if (!member) {
+		message.author.removeRole(role.id).catch(console.error);
+		message.channel.sendMessage("role " + args.join(" ") + " has been added  👍");
+	}
 	member.removeRole(role.id).catch(console.error);
 	message.channel.sendMessage("role " + args.join(" ") + " has been deleted  👍");
 };
