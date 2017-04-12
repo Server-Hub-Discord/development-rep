@@ -1,3 +1,9 @@
+const google = require('google');
+const moment = require('moment');
+const Discord = require('discord.js');
+const randomcolor = require('randomcolor');
+
+
 exports.run = (bot, msg, params = []) => {
   var code = params.join(" ");
   try {
