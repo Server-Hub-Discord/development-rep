@@ -1,5 +1,8 @@
 exports.run = (bot, message) => {
     let userToKick = message.mentions.users.first();
+    if (!userToKick) {
+    return;
+    }
     message.guild.member(userToKick).kick().catch(console.error);
     message.channel.sendMessage(`kicked.`).catch(console.error);
 };
