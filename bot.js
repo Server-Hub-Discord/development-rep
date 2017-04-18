@@ -40,7 +40,7 @@ bot.on('ready',() => {
 	console.log(`---------------------------------------------`)
 	console.log(`Connected! ${config.emojis.success}`);
 	console.log(`Logged in as ${bot.user.username}`);
-	console.log(`token = ${config.token}`);
+	console.log(`token = isa secret *shhhhh*`);
 	console.log(`game = ${config.setgame}`);
 	console.log(`prefix = ${config.prefix}`);
 	console.log(`console emojis = ${config.emojis.warn} ${config.emojis.success} ${config.emojis.working}`)
