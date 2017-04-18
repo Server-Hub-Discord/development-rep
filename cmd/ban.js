@@ -7,8 +7,8 @@ exports.run = (bot, message) => {
                                       usage: "ban {user mention or user id}"`);
         return;
     }
-    message.guild.member(userToKick).kick().catch(console.error);
-    message.channel.sendMessage(`kicked.`).catch(console.error);
+    message.guild.ban(userToKick).catch(console.error);
+    message.channel.sendMessage(`banned user ${userToKick}`).catch(console.error);
 };
 
 exports.conf = {
