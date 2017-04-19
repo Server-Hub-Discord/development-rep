@@ -14,7 +14,7 @@ exports.run = (bot, message) => {
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: [],
+  aliases: ['getridof'],
   permLevel: 2
 };
 
