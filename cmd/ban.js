@@ -1,6 +1,6 @@
 exports.run = (bot, message) => {
     let args = message.content.split(" ").slice(1);
-    let userToKick = message.mentions.users.first() ? message.mentions.users.first() : args;
+    let userToKick = message.mentions.users.first() ? message.mentions.users.first() : args[0];
     if (!userToKick) {
         message.channel.sendMessage(` name : "ban",
                                       description: "bans the selected user",

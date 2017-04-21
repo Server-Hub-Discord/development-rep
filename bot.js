@@ -53,17 +53,17 @@ bot.on("warn", console.warn);
 
 bot.login(config.token);
 
-bot.on("guildBanAdd", member =>{
+bot.on("guildBanAdd", (guild, user) =>{
 	bot.channels.get("288411971437461505").sendMessage("", {embed: {
 		color: 0xFF0000,
-		description: `:hammer: **User Banned:** ${member.user.username}#${member.user.discriminator} (${member.id})`
+		description: `:hammer: **User Banned:** ${user.username}#${user.discriminator} (${user.id})`
 	}}).catch(console.error);
 });
 
-bot.on("guildBanRemove", member =>{
+bot.on("guildBanRemove", (guild, user) =>{
 	bot.channels.get("288411971437461505").sendMessage("", {embed: {
 		color: 0x00FF00,
-		description: `:hammer: **User Unbanned:** ${member.user.username}#${member.user.discriminator} (${member.id})`
+		description: `:hammer: **User Unbanned:** ${user.username}#${user.discriminator} (${user.id})`
 	}}).catch(console.error);
 });
 

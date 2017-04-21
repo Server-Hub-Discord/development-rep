@@ -7,7 +7,7 @@ exports.run = (bot, message) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ['uon'],
   permLevel: 0
 };
 
