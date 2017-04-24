@@ -1,10 +1,10 @@
-exports.run = (bot, message) => {
-      let CHannel = message.mentions.channels.first();
-			if (CHannel !== null) {
+exports.run = (bot, message, params) => {
+	let CHannel = message.mentions.channels.first() ? (
   			const messageContent = message.content.split(" ").slice(2).join(" ");
   			CHannel.sendMessage(messageContent).catch(console.error);
-					message.channel.sendMessage("Done :white_check_mark:")
-			}
+			message.channel.sendMessage("Done :white_check_mark:");
+	) : (message.channel.sendMessage(params);
+	    );
 
 };
 
