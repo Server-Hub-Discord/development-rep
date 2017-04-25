@@ -2,9 +2,6 @@ const google = require('google');
 
 google.resultsPerPage = 3;
 
-
-
-
 exports.run = (bot, message, params) => {
   google(params, function (err, res){
   if (err) console.error(err);
