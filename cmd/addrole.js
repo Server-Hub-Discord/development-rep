@@ -13,7 +13,7 @@ exports.run = (bot, message, params)  => {
 
 		args.shift();
 		args.shift();
-		let role = message.guild.roles.find("name", args.join(" ")).catch(console.error);
+		let role = message.guild.roles.find("name", args.join(" "));
 	// Add the role!
 	member.addRole(role.id).catch(console.error);
 	message.channel.sendMessage("role " + args.join(" ") + " has been added  👍");
