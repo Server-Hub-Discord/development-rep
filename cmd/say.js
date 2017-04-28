@@ -1,6 +1,7 @@
 exports.run = (bot, message) => {
 	let args = message.content.split(" ").slice(1);
 		message.channel.sendMessage(args.join(" ")).catch(console.error);
+	message.delete();
 };
 
 exports.conf = {
