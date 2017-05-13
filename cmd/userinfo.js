@@ -24,6 +24,7 @@ exports.run = (bot, message) => {
   				disableEveryone: true
   			}
   		);
+	    return;
     }
 		var embed = new Discord.RichEmbed();
 		embed.addField("Username", `${member.user.username}#${member.user.discriminator}`, true)
@@ -44,6 +45,7 @@ exports.run = (bot, message) => {
 				disableEveryone: true
 			}
 		);
+	return;
 };
 
 exports.conf = {
