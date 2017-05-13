@@ -21,7 +21,7 @@ exports.run = (bot, message) => {
             },
             {
               name: `Members [${guild.memberCount}]`,
-              value: message.guild.members.filter(online).size
+              value: `Online: ${message.guild.members.filter(online).size}`
             },
             {
               name: "Server Owner",
