@@ -1,6 +1,5 @@
 exports.run = (bot, msg) => {
 var quote = msg.content.split(" ").slice(1).join(" ");
-msg.delete();
 if (quote.length < 1) {
     return msg.channel.sendMessage("Please specify a message ID.");
 }
