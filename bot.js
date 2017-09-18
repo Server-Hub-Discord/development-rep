@@ -21,6 +21,7 @@ fs.readdir(`./cmd/`, (err, files) => {
 
 bot.on("message", msg => {
   if (!msg.content.startsWith(config.prefix)) return;
+  if (msg.channel.type === "dm") return;
   let command = msg.content.split(" ")[0].slice(config.prefix.length);
   let params = msg.content.split(" ").slice(1);
   let perms = bot.elevation(msg);
