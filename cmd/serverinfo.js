@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 exports.run = (bot, message) => {
         let guild = message.guild;
         function online(m) {
@@ -29,7 +31,7 @@ exports.run = (bot, message) => {
             },
             {
               name: "Created On",
-              value: guild.createdAt
+              value: moment(guild.createdTimestamp).format("MMMM Do YYYY h:mm:ss")
             }
           ],
           timestamp: new Date(),
